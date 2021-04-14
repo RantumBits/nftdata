@@ -1,14 +1,14 @@
 module.exports = {
-    siteTitle: 'Gatsby Ethereum Dapp Starter',
-    siteDesc: 'Gatsby v2 Starter for Ethereum Dapps using Web3 with various Account Management options',
-    siteAuthor: 'Rob Secord (robsecord.eth)',
+    siteTitle: 'hodloot',
+    siteDesc: 'manage all your NFTs in one place // sort, tag, list, sell ',
+    siteAuthor: 'ecomloop',
     siteLogoUrl: 'src/images/gatsby-icon.png',
 
-    manifestName: 'Ethereum Dapp',
-    manifestShortName: 'EthDapp', // max 12 characters
-    manifestStartUrl: 'https://gatsby-eth-dapp.runkodapps.com/',
-    manifestBackgroundColor: '#663399',
-    manifestThemeColor: '#663399',
+    manifestName: 'hodloot',
+    manifestShortName: 'hodloot', // max 12 characters
+    manifestStartUrl: 'https://hodloot.com/',
+    manifestBackgroundColor: '#264653',
+    manifestThemeColor: '#264653',
     manifestDisplay: 'standalone',
     manifestIcon: 'src/images/gatsby-icon.png',
 
@@ -26,7 +26,7 @@ module.exports = {
         {
             icon: 'fa-twitter',
             name: 'Twitter',
-            url: 'https://twitter.com/[__your_social_link__]',
+            url: 'https://twitter.com/ecomloop.com',
         },
         {
             icon: 'fa-facebook',

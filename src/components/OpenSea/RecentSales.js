@@ -42,7 +42,7 @@ const RecentSales = (props) => {
     return (
         <Box width={1} my={1} p={2} border='1px solid'>
             <Heading>
-                RECENT SALES
+                Recent sales
                 {!loaded && <Loader mx={2} style={{ display: "inline-flex" }} />}
             </Heading>
             {data && data.map((item, index) => {

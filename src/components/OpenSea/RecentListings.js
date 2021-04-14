@@ -31,7 +31,7 @@ const RecentListings = (props) => {
         setCurrentLimit(currentLimit + limitSteps)
     }
 
-    const openModal = (item) => {        
+    const openModal = (item) => {
         ModalManager.open(<AssetItemModal item={item} onRequestClose={() => true} />)
     }
 
@@ -42,7 +42,7 @@ const RecentListings = (props) => {
     return (
         <Box width={1} my={1} p={2} border='1px solid'>
             <Heading>
-                RECENT LISTINGS
+                Recent listings
                 {!loaded && <Loader mx={2} style={{ display: "inline-flex" }} />}
             </Heading>
             {data && data.map((item, index) => {
@@ -69,7 +69,7 @@ const RecentListings = (props) => {
                                     <Text>Listed by: {sellername}</Text>
                                 }
                                 <Button.Outline size="small" onClick={() => openModal(item)}>Make Offer</Button.Outline>
-                            </Box>                            
+                            </Box>
                         </Flex>
                     </Card>
                 )
