@@ -2,8 +2,7 @@ import React from 'react';
 import { Heading, Button, Blockie, EthAddress, Text, Box, Flex, Card, Modal, Link, Loader, Image, Table } from 'rimble-ui';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { ModalManager } from 'react-dynamic-modal'
-import AssetItemModal from './AssetItemModal'
+import SingleAsset from './SingleAsset';
 
 const responsive = {
     desktop: {
@@ -46,10 +45,6 @@ const MyAssetsCarousel = (props) => {
             .catch(err => console.error('error:' + err));
     }
 
-    const openModal = (item) => {
-        ModalManager.open(<AssetItemModal item={item} sell={true} onRequestClose={() => true} />)
-    }
-
     React.useEffect(() => {
         fetchData(accountaddress);
     }, []);
@@ -68,16 +63,8 @@ const MyAssetsCarousel = (props) => {
                     removeArrowOnDeviceType={["tablet", "mobile"]}
                 >
                     {data && data.map((item, index) => {
-                        const imageURL = item.asset && (item.asset.image_thumbnail_url || item.asset.image_preview_url || item.asset.image_url)
-                        const name = item.asset && (item.asset.name || 'No Title')
-                        const description = item.asset && item.asset.description
                         return (
-                            <Card key={'myassets-'+index} m={3}>
-                                <Heading as={'h4'}>{name}</Heading>
-                                <Image src={imageURL} alt={name} width={80} borderRadius={8} />
-                                <Text>{description}</Text>
-                                <Button.Outline size="small" onClick={() => openModal(item)}>Sell Item</Button.Outline>
-                            </Card>
+                            <SingleAsset key={index} item={item} buttonText={'Sell Item'} isSell={true} />
                         );
                     })}
                 </Carousel>

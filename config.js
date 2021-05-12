@@ -10,7 +10,7 @@ module.exports = {
     manifestBackgroundColor: '#264653',
     manifestThemeColor: '#264653',
     manifestDisplay: 'standalone',
-    manifestIcon: 'src/images/gatsby-icon.png',
+    manifestIcon: 'src/images/hodloot_logo.png',
 
     // This path is subpath of your hosting https://your.domain/gatsby-eth-dapp-starter/
     // pathPrefix: `/gatsby-eth-dapp-starter/`,
@@ -21,22 +21,18 @@ module.exports = {
         {
             icon: 'fa-github',
             name: 'Github',
-            url: 'https://github.com/[__your_social_link__]',
+            url: 'https://github.com/ecomloop',
         },
         {
             icon: 'fa-twitter',
             name: 'Twitter',
             url: 'https://twitter.com/ecomloop.com',
         },
-        {
-            icon: 'fa-facebook',
-            name: 'Facebook',
-            url: 'https://facebook.com/[__your_social_link__]',
-        },
+      
         {
             icon: 'fa-envelope-o',
             name: 'Email',
-            url: 'mailto:[__your_email_address__]',
+            url: 'mailto:andrew@ecomloop.com',
         },
     ],
 };
