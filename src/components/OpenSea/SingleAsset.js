@@ -21,11 +21,11 @@ const SingleAsset = (props) => {
     return (
         <Card key={'myassets-' + randomNumber} m={3}>
             <Image src={imageURL} alt={name} width={1} borderRadius={8} />
-            <Link href={assetLink} target="_blank"><Heading as={'h4'}>{name}</Heading></Link>
+          <Heading as={'h4'}>{name}</Heading>
             {collectionName &&
                 <Link href={`/collection/${collectionLink}`} target="_blank"><Text>{collectionName}</Text></Link>
             }
-            <Text>Price: {price} ETH</Text>
+            <Text>{price} ETH</Text>
             <Button.Outline size="small" onClick={() => openModal(item)}>{buttonText}</Button.Outline>
         </Card>
     );

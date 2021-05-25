@@ -9,7 +9,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             module: {
                 rules: [
                     {
-                        test: /portis\.js|authereum\.js/,
+                        test: /portis\.js|authereum\.js|torus-embed|contentful-management/,
                         use: loaders.null(),
                     },
                 ],

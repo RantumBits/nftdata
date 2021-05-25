@@ -43,7 +43,7 @@ const AssetItemModal = (props) => {
 
     React.useEffect(() => {
         if (item.asset) {
-            fetchData(item.asset.asset_contract.address, item.asset.token_id);               
+            fetchData(item.asset.asset_contract.address, item.asset.token_id);
         }
     }, []);
 
@@ -119,14 +119,14 @@ const AssetItemModal = (props) => {
 
     const getExistingTags = (id) => {
         ContentfulReadTags(rootStore.walletStore.defaultAddress, id).then((response) => {
-            console.log("*********** Tag Received .....", response)            
+            console.log("*********** Tag Received .....", response)
             setExistingTags(response)
         })
     }
     const saveTag = () => {
         setSaveProcessing(true);
         ContentfulWriteTags(rootStore.walletStore.defaultAddress, data.id, tagName).then(() => {
-            console.log("*********** Tag Saved.....")            
+            console.log("*********** Tag Saved.....")
             setSaveProcessing(false);
             setSaveMessage("Tag Saved Successfully....");
             setTagName("");
@@ -162,7 +162,7 @@ const AssetItemModal = (props) => {
                                     <Link href={`http://opensea.io/collection/${collectionLink}`} target="_blank"><Text>{collectionName}</Text></Link>
                                 }
                                 <Text>{description}</Text>
-                                <Text><strong>Price: </strong>{price} ETH</Text>
+                                <Text><strong></strong>{price} ETH</Text>
                                 {sellername &&
                                     <Text><strong>Sold by: </strong>{sellername}</Text>
                                 }
@@ -194,9 +194,10 @@ const AssetItemModal = (props) => {
                                             ml={3}
                                             onClick={makeSellOrder}
                                             disabled={!isLoggedIn}>
-                                            Sell Now
+                                            List on OpenSea
                                         </Button>
-                                    }
+                                    }<br/>
+
                                     {isLoggedIn &&
                                         <Box>
                                             <Flex ml={3}>
@@ -206,7 +207,7 @@ const AssetItemModal = (props) => {
                                                     placeholder="Tag to add"
                                                     onChange={(e) => setTagName(e.target.value)}
                                                 />
-                                                <Button onClick={saveTag}>Tags {saveProcessing && <Loader ml={2} bg="primary" color="white" style={{ display: "inline-flex" }} />}</Button>
+                                                <Button onClick={saveTag}>Tag {saveProcessing && <Loader ml={2} bg="primary" color="white" style={{ display: "inline-flex" }} />}</Button>
                                             </Flex>
                                             {saveMessage &&
                                                 <Flash m={3} variant="success">{saveMessage}</Flash>
@@ -222,8 +223,8 @@ const AssetItemModal = (props) => {
                                 {processing && <Loader m={2} style={{ display: "inline-flex" }} />}
                                 {!isLoggedIn &&
                                     <ToastMessage
-                                        message={'Authentical Required'}
-                                        secondaryMessage={"Please login to Buy this Item"}
+                                        message={'Authentication Required'}
+                                        secondaryMessage={"Please login to make an offer on this item"}
                                         variant={'failure'}
                                     />
                                 }

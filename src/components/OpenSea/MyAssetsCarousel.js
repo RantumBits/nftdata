@@ -7,18 +7,18 @@ import SingleAsset from './SingleAsset';
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 3 // optional, default to 1.
+        items: 4,
+        slidesToSlide: 4 // optional, default to 1.
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 2,
-        slidesToSlide: 2 // optional, default to 1.
+        items: 3,
+        slidesToSlide: 3 // optional, default to 1.
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
         items: 1,
-        slidesToSlide: 1 // optional, default to 1.
+        slidesToSlide: 2 // optional, default to 1.
     }
 };
 
@@ -48,12 +48,12 @@ const MyAssetsCarousel = (props) => {
     React.useEffect(() => {
         fetchData(accountaddress);
     }, []);
-    
+
     return (
         <>
             {!loaded && <Loader size='30px' marginRight={3} style={{ display: "inline-flex" }} />}
             {data &&
-                <Carousel                
+                <Carousel
                     showDots={true}
                     responsive={responsive}
                     infinite={true}
@@ -64,7 +64,7 @@ const MyAssetsCarousel = (props) => {
                 >
                     {data && data.map((item, index) => {
                         return (
-                            <SingleAsset key={index} item={item} buttonText={'Sell Item'} isSell={true} />
+                            <SingleAsset key={index} item={item} buttonText={'Manage Item'} isSell={true} />
                         );
                     })}
                 </Carousel>

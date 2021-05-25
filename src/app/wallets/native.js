@@ -10,8 +10,8 @@ class NativeWallet extends IWalletBase {
     }
 
     static isEnabled() {
-        const isModern = !!window.ethereum;
-        const isLegacy = (typeof window.web3 !== 'undefined');
+        const isModern = (typeof window !== 'undefined') && !!window.ethereum;
+        const isLegacy = (typeof window !== 'undefined') && (typeof window.web3 !== 'undefined');
         return (isModern || isLegacy) && !window.web3.currentProvider.isMetaMask;
     }
 

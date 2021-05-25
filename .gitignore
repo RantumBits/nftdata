@@ -73,3 +73,6 @@ yarn-error.log
 # Notes
 notes.txt
 
+
+# Local Netlify folder
+.netlify
