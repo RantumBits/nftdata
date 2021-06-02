@@ -46,6 +46,7 @@
     "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-sharp": "^2.3.2",
     "gatsby-source-filesystem": "^2.1.38",
+    "gatsby-transformer-csv": "^3.6.0",
     "gatsby-transformer-sharp": "^2.3.5",
     "lodash": "^4.17.21",
     "mobx": "^5.15.0",
