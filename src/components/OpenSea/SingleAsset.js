@@ -10,7 +10,6 @@ const SingleAsset = (props) => {
     const assetLink = item && item.asset && (item.asset.permalink || '#')
     const collectionName = item && item.asset && item.asset.collection && item.asset.collection.name
     const collectionLink = item && item.asset && item.asset.collection && item.asset.collection.slug
-    const price = item && (item.total_price || 0) / 1000000000000000000;
 
     const openModal = (item) => {
         ModalManager.open(<AssetItemModal item={item} sell={isSell || false} onRequestClose={() => true} />)
@@ -18,14 +17,20 @@ const SingleAsset = (props) => {
 
     const randomNumber = Math.random() * 10000;
 
+    const getLastSaleString = (sale) => {
+        if(!sale) return 0;
+        const price = (sale.total_price || sale.starting_price) / (10**sale.payment_token.decimals)
+        return price+" "+sale.payment_token.symbol
+    }
+
     return (
         <Card key={'myassets-' + randomNumber} m={3}>
-            <Image src={imageURL} alt={name} width={1} borderRadius={8} />
-          <Heading as={'h4'}>{name}</Heading>
+            <Image src={imageURL} alt={name} width={.5} maxWidth='128px' borderRadius={8} />
+            <Heading as={'h4'}>{name}</Heading>
             {collectionName &&
-                <Link href={`/collection/${collectionLink}`} target="_blank"><Text>{collectionName}</Text></Link>
+                <Link href={`/collection/${collectionLink}`}><Text>{collectionName}</Text></Link>
             }
-            <Text>{price} ETH</Text>
+            <Text>{getLastSaleString(item)}</Text>
             <Button.Outline size="small" onClick={() => openModal(item)}>{buttonText}</Button.Outline>
         </Card>
     );

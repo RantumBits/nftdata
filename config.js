@@ -1,12 +1,12 @@
 module.exports = {
-    siteTitle: 'hodloot',
-    siteDesc: 'manage all your NFTs in one place // sort, tag, list, sell ',
+    siteTitle: 'rantum.crypto',
+    siteDesc: 'crypto art data, info, sales, graphs',
     siteAuthor: 'ecomloop',
     siteLogoUrl: 'src/images/gatsby-icon.png',
 
-    manifestName: 'hodloot',
-    manifestShortName: 'hodloot', // max 12 characters
-    manifestStartUrl: 'https://hodloot.com/',
+    manifestName: 'rantum.art',
+    manifestShortName: 'rantum', // max 12 characters
+    manifestStartUrl: 'https://rantum.crypto/',
     manifestBackgroundColor: '#264653',
     manifestThemeColor: '#264653',
     manifestDisplay: 'standalone',
@@ -26,9 +26,9 @@ module.exports = {
         {
             icon: 'fa-twitter',
             name: 'Twitter',
-            url: 'https://twitter.com/ecomloop.com',
+            url: 'https://twitter.com/rantumbits',
         },
-      
+
         {
             icon: 'fa-envelope-o',
             name: 'Email',

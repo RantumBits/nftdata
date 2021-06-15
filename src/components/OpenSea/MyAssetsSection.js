@@ -81,17 +81,17 @@ const MyAssetsSection = ({ site }) => {
                     </>
                 }
             </Flex>
-
+{/**
             {!isLoggedIn &&
                 <Heading as={"h2"}>Login to manage Assets</Heading>
             }
             {isLoggedIn &&
                 <Box>
                     <Heading as={"h2"}>Manage Assets</Heading>
-                    <MyAssetsCarousel accountaddress={rootStore.walletStore.defaultAddress}/>                    
+                    <MyAssetsCarousel accountaddress={rootStore.walletStore.defaultAddress}/>
                 </Box>
             }
-
+**/}
             <Modal isOpen={isOpen}>
                 <Card width={"420px"} p={0}>
                     <Button.Text
